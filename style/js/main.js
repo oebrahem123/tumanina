@@ -292,6 +292,39 @@ const Tasbih = {
   }
 };
 /* ======================================================
-    (Start ذكر مميز)
+   Start Daily Zikr Notification
    ====================================================== */
+function closeZikr() {
+  document.querySelector(".zikr-popup").classList.remove("active");
+  document.querySelector(".zikr-overlay").classList.remove("active");
+}
+
+const azkar = [
+  "سبحان الله وبحمده",
+  "لا إله إلا الله",
+  "استغفر الله العظيم",
+  "اللهم صل وسلم على نبينا محمد"
+];
+
+function showZikrNotification() {
+  const notification = document.getElementById("zikrNotification");
+  const zikrText = document.getElementById("zikrText");
+
+  const randomZikr = azkar[Math.floor(Math.random() * azkar.length)];
+  zikrText.innerText = randomZikr;
+
+  notification.classList.add("show");
+
+  // يختفي تلقائي بعد 7 ثواني
+  setTimeout(() => {
+    closeZikrNotification();
+  }, 7000);
+}
+function closeZikrNotification() {
+  const notification = document.getElementById("zikrNotification");
+  notification.classList.remove("show");
+}
+window.addEventListener("DOMContentLoaded", () => {
+  showZikrNotification();
+});
    
