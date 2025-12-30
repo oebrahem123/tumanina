@@ -1,0 +1,1321 @@
+/* ======================================================
+   🌱 ROOT VARIABLES (Light Mode)
+   ====================================================== */
+:root {
+  --bg-main: #f4f6f3;
+  --bg-card: #ffffff;
+  --text-main: #333;
+  --green: #2f6b4f;
+  --brown: #6b4f2f;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* ======================================================
+    🌙Start NIGHT MODE 
+   ====================================================== */
+body.night {
+  --bg-main: #011120;
+  --bg-card: #0d1a2c;
+  --text-main: #e6f2ee;
+  --green: #6fcf97;
+  --brown: #cfa76f;
+  --shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+body.night .footer {
+  background: #102c46;
+}
+
+
+
+
+/* ======================================================
+   🌙 End NIGHT MODE 
+   ====================================================== */
+/* ======================================================
+    GLOBAL STYLES
+   ====================================================== */
+body {
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+
+
+a {
+  color: var(--green);
+}
+
+button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.content {
+  padding-top: 30px;
+
+}
+
+/***************************************************************************************
+                                      Start Navbar 
+ ***************************************************************************************/
+ .navbar,
+.zikr-card {
+  background: var(--bg-card);
+  box-shadow: var(--shadow);
+}
+.navbar {
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.09);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-icon {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2f6b4f;
+}
+
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+}
+
+.navbar a {
+  color: #555;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #2f6b4f;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  direction: rtl;
+}
+
+.logo-icon {
+  width: 42px;
+  height: auto;
+}
+
+.logo-text {
+  font-family: 'Cairo', sans-serif;
+  font-size: 22px;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+  font-family: "Rakkas", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-header {
+  display: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #2f6b4f;
+  transition: transform 0.3s ease;
+}
+/* Start NIGHT MODE  Navbar */
+
+body.night .navbar {
+  background-color: #102c46;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.05);
+}
+body.night .navbar li a {
+  color: #ffffff;
+}
+body.night .logo-text {
+  color: #ffffff;
+}
+body.night .nav-links.active {
+  background-color: #0d1a2c;
+}
+
+
+/* End NIGHT MODE  Navbar */
+
+/* Start  @media Screen Navbar */
+@media (max-width: 768px) {
+  body.night .nav-links {
+    background-color: #0d1a2c;
+  }
+}
+@media (max-width: 768px) {
+
+  .nav-links .settings-btn {
+    display: none;
+  }
+
+  .navbar {
+    padding: 15px 20px;
+    width: 80%;
+
+  }
+
+  .navbar ul {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    /* 🔥 إلغاء التوسيط */
+    left: auto;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 1001;
+  }
+
+
+}
+@media (max-width: 768px) {
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .logo-icon {
+    width: 34px;
+  }
+}
+
+@media (min-width: 769px) {
+  .settings-icon {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+
+  /* Overlay */
+  .menu-overlay {
+
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+  }
+
+  .menu-header {
+    display: block;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Side Menu */
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+
+    background: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+
+    z-index: 1001;
+  }
+
+  .menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px;
+
+    font-size: 18px;
+    font-weight: bold;
+    color: #2f6b4f;
+
+    border-bottom: 1px solid #eee;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  /* عناصر المينو */
+  .nav-links li {
+    list-style: none;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #2f6b4f;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 5px 20px;
+    direction: rtl;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #333;
+    text-decoration: none;
+
+    transition: background 0.25s ease;
+  }
+
+  .nav-links a:hover {
+    background: #f4f6f3;
+    color: #2f6b4f;
+  }
+}
+
+/* End  @media Screen Navbar */
+/*Start Navbar input setting*/
+.settings-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 2000;
+}
+.settings-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  background: var(--bg-card);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.2);
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 2001;
+  padding: 20px;
+}
+.settings-panel.active {
+  transform: translateX(0);
+}
+.settings-overlay.active {
+  display: block;
+}
+.settings-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.close-settings {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+.switch {
+  position: relative;
+  width: 42px;
+  height: 22px;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 2px;
+  top: 2px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+.switch input:checked+.slider {
+  background: var(--green);
+}
+.switch input:checked+.slider::before {
+  transform: translateX(20px);
+}
+/* Start Night Mode */
+body.night .settings-panel .settings-header .close-settings {
+  color: #ffffff;
+}
+/* End Night Mode */ 
+
+
+/*************************************************************************************
+                                         Star ابدأ التسبيح  
+***************************************************************************************/
+.hero-card {
+  max-width: 1068px;
+  margin: 30px auto;
+  padding: 40px 50px;
+  direction: rtl;
+  background: #ffffff;
+  border-radius: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.hero-content {
+  flex: 1;
+  direction: rtl;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  color: #2c3E50;
+  margin: 16px 0 10px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.hero-content p {
+  margin-bottom: 8px;
+  font-family: 'Amiri', serif;
+  font-size: 20px;
+  color: #555;
+}
+.hero-content .hero-description {
+  font-family: 'Cairo', sans-serif;
+  font-size: 18px;
+  color: #6b6b6b;
+  max-width: 372px;
+  margin-bottom: 28px;
+  text-align: justify;
+}
+
+.zikr-e {
+  background: #f0f3f2;
+  color: #6B9080;
+  padding: 9px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 450;
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  font-family: 'Cairo', sans-serif;
+}
+
+.start-session-btn {
+  background: #6b8f7a;
+  color: #fff;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.start-session-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image img {
+  max-width: 320px;
+  width: 100%;
+}
+
+.zikr-icon {
+  color: var(--primary-color);
+}
+
+.hero-image {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  max-width: 337px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+/* Start Night Mode */ 
+body.night .hero-content h1 {
+  color: #cfd8e3;
+}
+
+body.night .hero-description {
+  color: #cfd8dc;
+}
+body.night .zikr-e {
+  background-color: #6b8f7a3d;
+  color: #ffffff;
+}
+body.night .hero-card {
+  background: #0d1a2c;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+body.night .hero-content p {
+  color: #cfd8e3;
+}
+
+/* End Night Mode */ 
+/* Start @media screen  */
+  
+
+@media (max-width: 768px) {
+  .hero-description {
+    font-size: 16px;
+    max-width: 100%;
+  }
+}
+.hero-description {
+  opacity: 0.9;
+}
+@media (max-width: 768px) {
+  .hero-card {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .hero-content {
+    text-align: center;
+    align-items: center;
+  }
+
+  .hero-content .hero-description {
+    font-size: 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-image img {
+    max-width: 220px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+
+  .hero-image {
+    justify-content: center;
+  }
+
+  .hero-image img {
+    max-width: 180px;
+  }
+
+}
+
+
+/* End @media screen  */
+
+/******************************* Decorative Divider فاصل زخرفي *******************************/
+.divider {
+  text-align: center;
+  margin: 40px 0;
+  color: var(--green);
+  font-size: 18px;
+  opacity: 0.6;
+}
+/*************************************************************************************
+                                          Start category
+***************************************************************************************/
+ /******************************* Start Heading *******************************/
+ .journey-section {
+  text-align: center;
+  padding: 0px 20px 80px 20px;
+}
+
+.journey-section h2 {
+  font-size: 36px;
+  color: #2c3E50;
+  margin-bottom: 10px;
+  font-family: 'Cairo', sans-serif;
+  font-weight: 700;
+}
+.journey-subtitle {
+  font-size: 18px;
+  color: #717182;
+  margin-bottom: 50px;
+  font-family: 'Cairo', sans-serif;
+}
+ /** Start night Mode  **/
+body.night .journey-section h2 {
+  color: #ffffff;
+}
+/******************************* Start section *******************************/
+.journey-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+/* Start @media section */
+@media (max-width: 768px) {
+  .journey-cards {
+    grid-template-columns: 1fr;
+  }
+}
+/******************************* Star Category In Section *******************************/
+.journey-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 35px 25px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.journey-card:hover h3 {
+  position: relative;
+  bottom: 15px;
+}
+
+.journey-card:hover p {
+  position: relative;
+  bottom: 15px;
+}
+
+.journey-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 30px #00000073;
+}
+
+.journey-card h3 {
+  font-size: 20px;
+  margin: 18px 0 6px;
+}
+
+.journey-card p {
+  font-size: 15px;
+  color: #777;
+}
+
+/* icon */
+.icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.icon.green {
+  background: #6b8f7a;
+}
+
+.icon.brown {
+  background: #b0895a;
+}
+
+.icon img {
+  width: 32px;
+}
+.journey-card .icon {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.journey-card:hover .icon {
+  position: relative;
+  bottom: 53px;
+  transform: translateY(-18px) scale(1.1);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+/* link */
+.start-link {
+  transition: transform 0.3s ease;
+  margin-top: 14px;
+  font-size: 14px;
+  color: #6b8f7a;
+  cursor: pointer;
+  justify-content: end;
+  display: flex;
+}
+.journey-card:hover .start-link {
+  transform: translateX(-10px);
+  right: 10px;
+}
+/* Start Night Mode In Category */
+body.night .journey-card {
+  background-color: #102c46;
+}
+body.night .journey-card:hover {
+  box-shadow: 0 15px 30px rgba(97, 95, 95, 0.08);
+}
+
+/********************************************** Start open Section **********************************************/
+
+.azkar-section {
+  direction: rtl;
+  display: none;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  animation: fadeIn 0.4s ease;
+}
+.azkar-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+}
+.azkar-section h2 {
+  text-align: center;
+  color: var(--green);
+  margin-bottom: 30px;
+}
+.azkar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.cancel-btn {
+  background: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: var(--green);
+  color: #fff;
+}
+.zikr-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+.strt {
+  font-size: 20px;
+  color: #6b4f2f;
+}
+.zekrbless {
+  color: #2f6b4f;
+}
+.zikr-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 5px;
+}
+
+.zikr-controls button {
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.count {
+  color: var(--green);
+  font-weight: bold;
+}
+
+/* Start night Mode  */
+body.night .zikr-card {
+  background-color: #0d1a2c;
+}
+body.night .zikr-card h1 {
+  color: #2f73f2;
+}
+body.night .zikr-card .zekrbless {
+  color: #2f6b67;
+}
+body.night .zikr-controls button {
+  background-color: #6b4f2f;
+}
+
+body.night .zikr-controls button:hover {
+  border: 1px solid #6b4f2f;
+  background-color: #0d1a2c;
+}
+/********************************* العداد الذكى **************************/
+.session-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(47, 107, 79, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+/* Start night mode open session للتسبيح */
+  body.night .session-overlay .session-box
+  ,.session-box-sabh {
+  background-color: #0d1a2c;
+}
+ body.night .session-overlay .session-box-sabh {
+  background-color: #0d1a2c;
+}
+
+body.night .session-overlay .session-box select,
+.session-box .number 
+{
+  background-color: #0d1a2c;
+  border: 1px solid #2f73f2;
+  color: #2f73f2;
+}
+body.night .session-overlay
+.session-box-sabh select{
+    background-color: #0d1a2c;
+  border: 1px solid #2f73f2;
+  color: #2f73f2;
+}
+/* Start Open session */
+.session-box 
+,.session-box-sabh {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+.session-box select,
+.session-box-sabh select,
+.session-box .number 
+,.session-box-sabh .numbre{
+  margin-bottom: 12px;
+  background-color: white;
+  color: black;
+}
+
+.session-box h2 
+,.session-box-sabh h2{
+  color: var(--green);
+  margin-bottom: 15px;
+}
+.session-zikr {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+.session-counter {
+  font-size: 60px;
+  color: var(--green);
+  margin: 15px 0;
+}
+.session-timer {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #666;
+}
+.tasbih-btn {
+  background: var(--brown);
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.end-btn {
+  background: transparent;
+  border: none;
+  color: var(--green);
+  cursor: pointer;
+}
+.progress {
+  height: 100%;
+  width: 0%;
+  background: var(--green);
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.contener {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+body.night .contener .number {
+  background-color: #0d1a2c;
+  border: 1px solid #2f73f2;
+  color: #2f73f2;
+}
+
+/* كل العناصر نفس العرض */
+.contener select,
+.contener .number {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+
+/*************************************************************************************
+                                          Start جذء التسبيح
+***************************************************************************************/
+.start-link {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.tasbih-section {
+  text-align: center;
+  margin: 60px auto;
+}
+
+.tasbih-card {
+  max-width: 320px;
+  margin: auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tasbih-zikr {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: var(--green);
+}
+
+.tasbih-counter {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.tasbih-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 18px;
+  border: none;
+  border-radius: 12px;
+  background: var(--green);
+  color: #fff;
+  cursor: pointer;
+}
+
+.reset-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: none;
+  color: var(--green);
+  cursor: pointer;
+}
+.tasbih-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+.tasbih-section {
+  display: none; /* مخفي */
+}
+.tasbih-section.show {
+  display: block;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/*************************************************************************************
+                                          Start ذكر مميز
+***************************************************************************************/
+.zikr-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 64px 24px;
+}
+
+
+.zikr-card-modern {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 750px;
+
+  background: #7fa194;
+  border-radius: 28px;
+
+  padding: 50px 40px;
+  text-align: center;
+
+  color: #ffffff;
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.zikr-card-modern::before,
+.zikr-card-modern::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.zikr-card-modern::before {
+  width: 220px;
+  height: 220px;
+  top: -60px;
+  right: -60px;
+  animation: floatCircle1 12s ease-in-out infinite;
+}
+
+.zikr-card-modern::after {
+  width: 160px;
+  height: 160px;
+  bottom: -50px;
+  left: -50px;
+  animation: floatCircle2 14s ease-in-out infinite;
+}
+
+.zikr-badge-top {
+  font-family: 'Cairo', sans-serif;
+  position: absolute;
+  top: 29px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background: rgba(255, 255, 255, 0.25);
+  padding: 6px 16px;
+  border-radius: 20px;
+
+  font-size: 14px;
+}
+.zikr-main {
+  font-family: "Alexandria", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 1.9;
+  margin: 40px 0 10px;
+}
+.zikr-sub {
+  font-family: "Alexandria", sans-serif;
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+.zikr-reward {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 23px 18px;
+  border-radius: 16px;
+  color: #fffffce6;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+/* Start Night Mode */
+body.night .zikr-card-modern {
+  background: #3a5f6b;
+}
+
+body.night .zikr-card-modern::before,
+body.night .zikr-card-modern::after {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.night .zikr-card-modern {
+  background-color: #0d1a2c;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+}
+body.night .zikr-badge-top {
+  background-color: #24363e;
+}
+body.night .zikr-badge-top {
+  background-color: #24363e;
+}
+
+body.night .zikr-main {
+  color: #cfd8e3;
+}
+body.night .zikr-sub {
+  color: #cfd8e3;
+  ;
+}
+body.night .zikr-reward {
+  background-color: #6b8f7a;
+}
+body.night .zikr-reward {
+  background-color: #6b8f7a;
+}
+/* حركة هادئة للدوائر */
+@keyframes floatCircle1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-20px, 20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes floatCircle2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(25px, -15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+/* Start @Media Section */
+@media (max-width: 768px) {
+  .zikr-card-modern {
+    padding: 40px 20px;
+  }
+
+  .zikr-main {
+    font-size: 19px;
+  }
+
+  .zikr-sub {
+    font-size: 11px;
+  }
+
+  .zikr-reward {
+    font-size: 8px;
+  }
+
+  .zikr-badge-top {
+    font-size: 10px;
+  }
+}
+
+/*************************************************************************************
+                                          Start Notification
+***************************************************************************************/
+.zikr-notification {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 320px;
+  background: #ffffff;
+  color: #333;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  padding: 16px 18px;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: all 0.4s ease;
+  z-index: 9999;
+}
+
+/* Active State */
+.zikr-notification.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Header */
+.zikr-notification-header {
+  display: flex;
+  gap: 7px;
+  align-items: flex-end;
+  font-weight: bold;
+  color: #2f6b4f;
+  margin-bottom: 10px;
+  direction: rtl;
+}
+
+/* Close Button */
+.zikr-notification button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #999;
+}
+
+/* Text */
+.zikr-notification p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0;
+  direction: rtl;
+}
+
+/* Mobile Fix */
+@media (max-width: 480px) {
+  .zikr-notification {
+    width: calc(80% - 30px);
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+/*************************************************************************************
+                                          Start Footer
+***************************************************************************************/
+.footer {
+  background: var(--green);
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 50px;
+}
+
+.footer p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.footer span {
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.footer-name {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-weight: bold;
+  color: #f2fff4;
+  margin-bottom: 10px;
+  direction: rtl;
+  justify-content: center;
+}
+
+
+
+
