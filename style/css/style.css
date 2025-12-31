@@ -586,6 +586,7 @@ body.night .hero-content p {
     flex-direction: column-reverse;
     text-align: center;
     padding: 30px 20px;
+     margin: 16px;
   }
 
   .hero-content {
@@ -668,6 +669,8 @@ body.night .journey-section h2 {
   .journey-cards {
     grid-template-columns: 1fr;
   }
+   .journey-subtitle {
+  font-size: 15px;
 }
 /******************************* Star Category In Section *******************************/
 .journey-card {
