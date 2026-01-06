@@ -312,6 +312,7 @@ body.night .nav-links.active {
 
   .nav-links.active {
     transform: translateX(0);
+    box-shadow: 0 10px 25px rgb(0 0 0 / 41%);
   }
 
   /* عناصر المينو */
@@ -871,6 +872,7 @@ body.night .zikr-controls button:hover {
   body.night .session-overlay .session-box
   ,.session-box-sabh {
   background-color: #0d1a2c;
+   margin: 11px;
 }
  body.night .session-overlay .session-box-sabh {
   background-color: #0d1a2c;
